@@ -27,8 +27,28 @@ void test_get_greeting(void) {
   free(greeting);
 }
 
+void test_get_product(void) {
+  int prod_expected = 35;
+  int factor1 = 7;
+  int factor2 = 5;
+
+  int product = get_product(factor1, factor2);
+  TEST_ASSERT_EQUAL_INT(prod_expected, product);
+}
+
+void test_get_bad_sum(void) {
+  int sum_expected = 15;
+  int addend1 = 7;
+  int addend2 = 8;
+
+  int sum = get_bad_sum(addend1, addend2);
+  TEST_ASSERT_NOT_EQUAL_INT(sum_expected, sum);
+}
+
 int main(void) {
   UNITY_BEGIN();
   RUN_TEST(test_get_greeting);
+  RUN_TEST(test_get_product);
+  RUN_TEST(test_get_bad_sum);
   return UNITY_END();
 }

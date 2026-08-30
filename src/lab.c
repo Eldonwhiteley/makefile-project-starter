@@ -32,3 +32,13 @@ char *get_greeting(const char *restrict name)
 
   return greeting;
 }
+
+int get_product(const int n1, const int n2)
+{
+  return n1 * n2;
+}
+
+int get_bad_sum(const int n1, const int n2)
+{
+  return n1 + n2 + 5;
+}
